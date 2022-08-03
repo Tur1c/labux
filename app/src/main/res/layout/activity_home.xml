@@ -43,7 +43,8 @@
 
         <androidx.viewpager.widget.ViewPager
             android:layout_width="match_parent"
-            android:layout_height="500dp"
+            android:layout_height="450dp"
+            android:layout_marginTop="20dp"
             android:id="@+id/vp_image">
 
         </androidx.viewpager.widget.ViewPager>
@@ -55,6 +56,43 @@
             android:layout_marginTop="20dp"
             android:gravity="center"
             android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_prev_image"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:text="p"
+                android:backgroundTint="@color/image_carousel_btn"
+                android:layout_margin="10dp"/>
+
+            <ImageView
+                android:id="@+id/btn_img_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/active_dot"
+                android:layout_margin="10dp"/>
+
+            <ImageView
+                android:id="@+id/btn_img_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/active_dot"
+                android:layout_margin="10dp"/>
+
+            <ImageView
+                android:id="@+id/btn_img_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/active_dot"
+                android:layout_margin="10dp"/>
+
+            <Button
+                android:id="@+id/btn_next_image"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:text="n"
+                android:backgroundTint="@color/image_carousel_btn"
+                android:layout_margin="10dp"/>
 
         </LinearLayout>
 
