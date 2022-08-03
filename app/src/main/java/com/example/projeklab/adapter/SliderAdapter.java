@@ -12,8 +12,6 @@ import androidx.viewpager.widget.PagerAdapter;
 
 import com.example.projeklab.R;
 
-import java.util.ArrayList;
-
 public class SliderAdapter extends PagerAdapter {
 
     int[] images;
@@ -39,7 +37,7 @@ public class SliderAdapter extends PagerAdapter {
     @NonNull
     @Override
     public Object instantiateItem(@NonNull ViewGroup container, int position) {
-        View myImageLayout = layoutInflater.inflate(R.layout.item, container, false);
+        View myImageLayout = layoutInflater.inflate(R.layout.slider_image, container, false);
         ImageView imageView = myImageLayout.findViewById(R.id.iv_image);
 
         if(Build.VERSION.SDK_INT >+ Build.VERSION_CODES.LOLLIPOP) imageView.setImageDrawable(context.getDrawable(images[position]));
