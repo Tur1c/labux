@@ -13,6 +13,7 @@ import androidx.viewpager2.widget.ViewPager2;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.PersistableBundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -23,6 +24,9 @@ import android.widget.TextView;
 
 import com.example.projeklab.adapter.ViewPagerAdapter;
 import com.google.android.material.navigation.NavigationView;
+
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class Home extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -41,6 +45,7 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
     private ImageView[] dots;
     ImageView iv_btn_1, iv_btn_2, iv_btn_3;
     Button btnNext, btnPrev;
+    int currentPageCounter = 0;
 
     void init() {
         extras = getIntent().getExtras();
