@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/sidebar_bg">
+    android:layout_height="match_parent">
     <item
         android:id="@+id/nav_home"
         android:title="HOME">
@@ -18,6 +17,6 @@
 
     <item
         android:id="@+id/nav_log_out"
-        android:title="Log Out">
+        android:title="LOG OUT">
     </item>
 </menu>

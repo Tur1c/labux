@@ -44,6 +44,11 @@
         android:layout_height="match_parent"
         app:headerLayout="@layout/sidebar"
         app:menu="@menu/menu"
+        app:itemTextAppearance="@style/NewFontStyle"
+        app:itemTextColor="@color/white"
+        android:gravity="center"
+        app:theme="@style/NavigationDrawerStyle"
+        android:background="@color/sidebar_bg"
         android:layout_gravity="start"/>
 
 
