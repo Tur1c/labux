@@ -1,20 +1,16 @@
 package com.example.projeklab;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.core.content.ContextCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.viewpager.widget.ViewPager;
-import androidx.viewpager2.widget.ViewPager2;
 
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.PersistableBundle;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -22,7 +18,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.example.projeklab.adapter.ViewPagerAdapter;
+import com.example.projeklab.adapter.SliderAdapter;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.Timer;
@@ -39,8 +35,8 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
     ActionBarDrawerToggle toggle;
 
     ViewPager viewPager;
+    int images[] = {R.drawable.slide1, R.drawable.slide2, R.drawable.slide3};
     LinearLayout sliderDots;
-    ViewPagerAdapter adapter;
     private int dotsCount;
     private ImageView[] dots;
     ImageView iv_btn_1, iv_btn_2, iv_btn_3;
@@ -61,17 +57,15 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
         btnNext = findViewById(R.id.btn_next_image);
         btnPrev = findViewById(R.id.btn_prev_image);
 
-
-        adapter = new ViewPagerAdapter(this);
-        viewPager = findViewById(R.id.vp_image);
-        viewPager.setAdapter(adapter);
-
         sliderDots = findViewById(R.id.slider_dots);
-        dotsCount = adapter.getCount();
+        dotsCount = images.length;
         dots = new ImageView[dotsCount];
         dots[0] = iv_btn_1;
         dots[1] = iv_btn_2;
         dots[2] = iv_btn_3;
+
+        viewPager = findViewById(R.id.vp_image);
+        viewPager.setAdapter(new SliderAdapter(images, Home.this));
     }
 
     void setUpDrawer() {
@@ -82,6 +76,11 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
 
     void changeName() {
         tvUsername.setText(extras.getString("username").toString());
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        return super.onCreateOptionsMenu(menu);
     }
 
     void imageSlider() {
@@ -118,16 +117,38 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                viewPager.setCurrentItem(getItem(+1), true);
+                if(getItem(+1) >= dotsCount) viewPager.setCurrentItem(0, true);
+                else viewPager.setCurrentItem(getItem(+1), true);
             }
         });
 
         btnPrev.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                viewPager.setCurrentItem(getItem(-1), true);
+                if(getItem(-1) < 0) viewPager.setCurrentItem(images.length, true);
+                else viewPager.setCurrentItem(getItem(-1), true);
             }
         });
+    }
+
+    void changeImage() {
+        final Handler handler = new Handler();
+        final Runnable update = new Runnable() {
+            @Override
+            public void run() {
+                if(currentPageCounter == images.length) currentPageCounter = 0;
+
+                viewPager.setCurrentItem(currentPageCounter++, true);
+            }
+        };
+
+        Timer timer = new Timer();
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                handler.post(update);
+            }
+        }, 5000, 5000);
     }
 
     @Override
@@ -139,6 +160,7 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
         setUpDrawer();
         imageSlider();
         buttonClick();
+        changeImage();
     }
 
     @Override
@@ -150,10 +172,17 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
                 startActivity(getIntent());
                 break;
 
+            case R.id.nav_about_us:
+                Intent intentAbout = new Intent(Home.this, AboutUs.class);
+                startActivity(intentAbout);
+                finish();
+                break;
+
             case R.id.nav_log_out:
                 Intent intentLogout = new Intent(this, MainActivity.class);
                 startActivity(intentLogout);
                 finish();
+                break;
         }
         return false;
     }
