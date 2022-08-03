@@ -13,4 +13,13 @@
     <color name="button_bg_hover">#7044CC</color>
     <color name="red">#FF0000</color>
     <color name="error_bg">#D9D9D9</color>
+
+<!--    home-->
+    <color name="home_bg">#D9C8FE</color>
+    <color name="welcome_home">#9873E7</color>
+    <color name="home_username">#FFF200</color>
+
+
+<!--    sidebar-->
+    <color name="sidebar_bg">#46248C</color>
 </resources>

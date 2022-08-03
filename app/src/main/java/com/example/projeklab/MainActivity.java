@@ -81,6 +81,8 @@ public class MainActivity extends AppCompatActivity {
                     }, 5000);
                 } else {
                     Intent intent = new Intent(MainActivity.this, Home.class);
+                    String substring = etEmail.getText().toString().substring(0, etEmail.getText().toString().indexOf("@"));
+                    intent.putExtra("username", substring);
                     startActivity(intent);
                 }
             }

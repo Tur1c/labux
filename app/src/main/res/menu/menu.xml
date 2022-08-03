@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/sidebar_bg">
+    <item
+        android:id="@+id/nav_home"
+        android:title="HOME">
+    </item>
+    <item
+        android:id="@+id/nav_items"
+        android:title="ITEMS">
+    </item>
+    <item
+        android:id="@+id/nav_about_us"
+        android:title="ABOUT US">
+    </item>
+
+    <item
+        android:id="@+id/nav_log_out"
+        android:title="Log Out">
+    </item>
+</menu>
