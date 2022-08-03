@@ -6,8 +6,7 @@
     android:layout_height="wrap_content"
     android:background="@color/home_bg"
     app:navigationIcon="@drawable/ic_baseline_dehaze_24"
-    android:elevation="0dp"
-    >
+    android:elevation="0dp">
 
     <TextView
         android:layout_width="wrap_content"
