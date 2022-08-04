@@ -59,9 +59,10 @@
 
             <Button
                 android:id="@+id/btn_prev_image"
-                android:layout_width="30dp"
-                android:layout_height="40dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="p"
+                android:textColor="@color/black"
                 android:backgroundTint="@drawable/button_radius"
                 android:layout_margin="10dp"/>
 
@@ -88,9 +89,10 @@
 
             <Button
                 android:id="@+id/btn_next_image"
-                android:layout_width="30dp"
-                android:layout_height="40dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="n"
+                android:textColor="@color/black"
                 android:backgroundTint="@drawable/button_radius"
                 android:layout_margin="10dp"/>
 

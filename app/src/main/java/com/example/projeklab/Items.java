@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 import com.google.android.material.navigation.NavigationView;
 
-public class AboutUs extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class Items extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     DrawerLayout drawerLayout;
     NavigationView navView;
@@ -26,7 +26,7 @@ public class AboutUs extends AppCompatActivity implements NavigationView.OnNavig
         navView = findViewById(R.id.navView);
         toolbar = findViewById(R.id.toolbar);
         toolBarTv = findViewById(R.id.toolbar_text);
-        toolBarTv.setText("About Us");
+        toolBarTv.setText("Mechandise");
     }
 
     void setUpDrawer() {
@@ -35,38 +35,36 @@ public class AboutUs extends AppCompatActivity implements NavigationView.OnNavig
         navView.setNavigationItemSelectedListener(this);
     }
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_about_us);
+        setContentView(R.layout.activity_items);
         init();
         setUpDrawer();
     }
-
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.nav_home:
-                Intent intentHome = new Intent(this, Home.class);
+                Intent intentHome = new Intent(Items.this, Home.class);
                 startActivity(intentHome);
                 finish();
                 break;
 
             case R.id.nav_about_us:
+                Intent intentAbout = new Intent(Items.this, AboutUs.class);
+                startActivity(intentAbout);
+                finish();
+                break;
+
+            case R.id.nav_items:
                 finish();
                 startActivity(getIntent());
                 break;
 
-            case R.id.nav_items:
-                Intent intentItems = new Intent(this, Items.class);
-                startActivity(intentItems);
-                finish();
-                break;
-
             case R.id.nav_log_out:
-                Intent intentLogout = new Intent(this, MainActivity.class);
+                Intent intentLogout = new Intent(Items.this, MainActivity.class);
                 startActivity(intentLogout);
                 finish();
                 break;

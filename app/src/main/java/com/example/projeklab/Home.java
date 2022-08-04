@@ -187,6 +187,12 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
                 finish();
                 break;
 
+            case R.id.nav_items:
+                Intent intentItems = new Intent(Home.this, Items.class);
+                startActivity(intentItems);
+                finish();
+                break;
+
             case R.id.nav_log_out:
                 Intent intentLogout = new Intent(this, MainActivity.class);
                 startActivity(intentLogout);

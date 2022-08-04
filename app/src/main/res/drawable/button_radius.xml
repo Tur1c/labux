@@ -12,5 +12,5 @@
             <solid
                 android:color="@color/image_carousel_btn"/>
         </shape>
-    </item>
+    </item android:color="@color/image_carousel_btn">
 </selector>
