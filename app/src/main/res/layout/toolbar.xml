@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:text="Home"
         android:textColor="@color/white"
-        android:fontFamily="@font/montserrat_extrabold_800"
-        android:textSize="28dp"/>
+        android:textSize="28dp"
+        android:fontFamily="@font/montserrat_extrabold_800"/>
 
 </androidx.appcompat.widget.Toolbar>

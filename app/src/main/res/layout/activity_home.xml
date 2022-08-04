@@ -18,7 +18,6 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/montserrat_extrabold_800"
             android:paddingLeft="30dp"
             android:paddingTop="30dp"
             android:layout_marginRight="30dp"
@@ -26,7 +25,8 @@
             android:text="Welcome,"
             android:textColor="@color/white"
             android:textSize="26dp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:fontFamily="@font/montserrat_extrabold_800"/>
 
         <TextView
             android:id="@+id/tv_username"
@@ -38,8 +38,8 @@
             android:textAlignment="textEnd"
             android:textSize="30dp"
             android:text="Hi"
-            android:fontFamily="@font/montserrat_extrabold_800"
-            android:textColor="@color/home_username"/>
+            android:textColor="@color/home_username"
+            android:fontFamily="@font/montserrat_extrabold_800"/>
 
         <androidx.viewpager.widget.ViewPager
             android:layout_width="match_parent"
@@ -59,10 +59,10 @@
 
             <Button
                 android:id="@+id/btn_prev_image"
-                android:layout_width="40dp"
+                android:layout_width="30dp"
                 android:layout_height="40dp"
                 android:text="p"
-                android:background="@drawable/button_radius"
+                android:backgroundTint="@drawable/button_radius"
                 android:layout_margin="10dp"/>
 
             <ImageView
@@ -88,10 +88,10 @@
 
             <Button
                 android:id="@+id/btn_next_image"
-                android:layout_width="40dp"
+                android:layout_width="30dp"
                 android:layout_height="40dp"
                 android:text="n"
-                android:background="@drawable/button_radius"
+                android:backgroundTint="@drawable/button_radius"
                 android:layout_margin="10dp"/>
 
         </LinearLayout>
