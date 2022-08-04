@@ -6,20 +6,25 @@ import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Lifecycle;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-public class FragmenAdapter extends FragmentStateAdapter {
+public class FragmentAdapter extends FragmentStateAdapter {
 
-    public FragmenAdapter(@NonNull FragmentManager fragmentManager, @NonNull Lifecycle lifecycle) {
+    public FragmentAdapter(@NonNull FragmentManager fragmentManager, @NonNull Lifecycle lifecycle) {
         super(fragmentManager, lifecycle);
     }
 
     @NonNull
     @Override
     public Fragment createFragment(int position) {
-        return null;
+        switch (position) {
+            case 0: return new FragmentCloth();
+            case 1: return new FragmentAlbum();
+            case 2: return new FragmentOther();
+        }
+        return new FragmentCloth();
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return 3;
     }
 }

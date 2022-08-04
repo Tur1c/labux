@@ -5,13 +5,16 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.viewpager2.widget.ViewPager2;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import com.example.projeklab.adapter.FragmentAdapter;
 import com.google.android.material.navigation.NavigationView;
+import com.google.android.material.tabs.TabLayout;
 
 public class Items extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -20,6 +23,9 @@ public class Items extends AppCompatActivity implements NavigationView.OnNavigat
     Toolbar toolbar;
     ActionBarDrawerToggle toggle;
     TextView toolBarTv;
+    TabLayout tabLayout;
+    ViewPager2 viewPager2;
+    FragmentAdapter fragmentAdapter;
 
     void init() {
         drawerLayout = findViewById(R.id.drawerLayout);
@@ -27,6 +33,15 @@ public class Items extends AppCompatActivity implements NavigationView.OnNavigat
         toolbar = findViewById(R.id.toolbar);
         toolBarTv = findViewById(R.id.toolbar_text);
         toolBarTv.setText("Mechandise");
+
+        viewPager2 = findViewById(R.id.vp_merchandise);
+        tabLayout = findViewById(R.id.tabLayout);
+        fragmentAdapter = new FragmentAdapter(getSupportFragmentManager(), getLifecycle());
+        viewPager2.setAdapter(fragmentAdapter);
+
+        tabLayout.addTab(tabLayout.newTab().setText("Cloth"));
+        tabLayout.addTab(tabLayout.newTab().setText("Album"));
+        tabLayout.addTab(tabLayout.newTab().setText("Other"));
     }
 
     void setUpDrawer() {
@@ -35,12 +50,40 @@ public class Items extends AppCompatActivity implements NavigationView.OnNavigat
         navView.setNavigationItemSelectedListener(this);
     }
 
+    void setUpTab() {
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                viewPager2.setCurrentItem(tab.getPosition());
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
+
+        viewPager2.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
+            @Override
+            public void onPageSelected(int position) {
+                super.onPageSelected(position);
+                tabLayout.selectTab(tabLayout.getTabAt(position));
+            }
+        });
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_items);
         init();
         setUpDrawer();
+        setUpTab();
     }
 
     @Override
