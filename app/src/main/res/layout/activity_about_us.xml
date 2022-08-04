@@ -9,9 +9,85 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:background="@color/home_bg">
 
         <include layout="@layout/toolbar"/>
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/logo" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ABOUT US"
+            android:textSize="30sp"
+            android:fontFamily="@font/montserrat_extrabold_800"
+            android:textColor="@color/home_username"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/about_us"
+            android:padding="15dp"
+            android:textSize="18sp"
+            android:textAlignment="center"
+            android:fontFamily="@font/montserrat_semibold_600"
+            android:textColor="@color/white"
+            android:layout_marginTop="0dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/sidebar_bg"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Contact"
+                android:textColor="@color/home_username"
+                android:textSize="22sp"
+                android:paddingLeft="20dp"
+                android:fontFamily="@font/montserrat_extrabold_800"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TEL : +82 070 8778 4555"
+                android:textColor="@color/white"
+                android:paddingLeft="40dp"
+                android:layout_marginTop="5dp"
+                android:textSize="16sp"
+                android:fontFamily="@font/montserrat_semibold_600" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Email : support@delluna.com"
+                android:textColor="@color/white"
+                android:paddingLeft="40dp"
+                android:layout_marginTop="5dp"
+                android:textSize="16sp"
+                android:fontFamily="@font/montserrat_semibold_600" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Address : Michuhol-gu, Incheon, Republic of Korea"
+                android:textColor="@color/white"
+                android:paddingLeft="40dp"
+                android:layout_marginTop="5dp"
+                android:textSize="16sp"
+                android:fontFamily="@font/montserrat_semibold_600" />
+
+        </LinearLayout>
 
     </LinearLayout>
 
