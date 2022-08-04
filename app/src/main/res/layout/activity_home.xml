@@ -43,7 +43,7 @@
 
         <androidx.viewpager.widget.ViewPager
             android:layout_width="match_parent"
-            android:layout_height="450dp"
+            android:layout_height="500dp"
             android:layout_marginTop="20dp"
             android:id="@+id/vp_image">
 
@@ -52,17 +52,17 @@
         <LinearLayout
             android:id="@+id/slider_dots"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_height="match_parent"
             android:gravity="center"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:background="@color/sidebar_bg">
 
             <Button
                 android:id="@+id/btn_prev_image"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:text="p"
-                android:backgroundTint="@color/image_carousel_btn"
+                android:background="@drawable/button_radius"
                 android:layout_margin="10dp"/>
 
             <ImageView
@@ -70,28 +70,28 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/active_dot"
-                android:layout_margin="10dp"/>
+                android:layout_margin="5dp"/>
 
             <ImageView
                 android:id="@+id/btn_img_2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/active_dot"
-                android:layout_margin="10dp"/>
+                android:layout_margin="5dp"/>
 
             <ImageView
                 android:id="@+id/btn_img_3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/active_dot"
-                android:layout_margin="10dp"/>
+                android:layout_margin="5dp"/>
 
             <Button
                 android:id="@+id/btn_next_image"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:text="n"
-                android:backgroundTint="@color/image_carousel_btn"
+                android:background="@drawable/button_radius"
                 android:layout_margin="10dp"/>
 
         </LinearLayout>
