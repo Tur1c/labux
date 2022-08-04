@@ -26,8 +26,11 @@ import java.util.TimerTask;
 
 public class Home extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
+    public static String username = "";
+
     TextView tvUsername;
     Bundle extras;
+    Intent intent;
 
     DrawerLayout drawerLayout;
     NavigationView navView;
@@ -75,7 +78,13 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
     }
 
     void changeName() {
-        tvUsername.setText(extras.getString("username").toString());
+        System.out.println(username);
+        intent = getIntent();
+        if(!intent.hasExtra("username")) tvUsername.setText(username);
+        else {
+            tvUsername.setText(extras.getString("username").toString());
+            username = extras.getString("username").toString();
+        }
     }
 
     @Override
