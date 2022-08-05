@@ -38,7 +38,7 @@ public class AlbumRecyclerViewAdapter extends RecyclerView.Adapter<AlbumRecycler
         holder.AlbumImage.setImageResource(album.getImage());
         holder.AlbumName.setText(album.getName());
         holder.AlbumDesc.setText(album.getDesc());
-        holder.AlbumPrice.setText("Rp. " + album.getPrice());
+        holder.AlbumPrice.setText("Rp " + album.getPrice());
     }
 
     @Override

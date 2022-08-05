@@ -38,7 +38,7 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
     ActionBarDrawerToggle toggle;
 
     ViewPager viewPager;
-    int images[] = {R.drawable.slide1, R.drawable.slide2, R.drawable.slide3};
+    int images[] = {R.drawable.carousel1, R.drawable.carousel2, R.drawable.carousel3};
     LinearLayout sliderDots;
     private int dotsCount;
     private ImageView[] dots;
@@ -59,6 +59,10 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
 
         btnNext = findViewById(R.id.btn_next_image);
         btnPrev = findViewById(R.id.btn_prev_image);
+        btnNext.setText(">");
+        btnNext.setTextSize(24);
+        btnPrev.setText("<");
+        btnPrev.setTextSize(24);
 
         sliderDots = findViewById(R.id.slider_dots);
         dotsCount = images.length;

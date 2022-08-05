@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
     EditText etEmail, etPassword;
     TextView tvError;
     Button btnSubmit;
+    int x,y;
 
     void init() {
         etEmail = findViewById(R.id.et_email);
@@ -25,6 +27,12 @@ public class MainActivity extends AppCompatActivity {
     boolean validateEmail(String email) {
         if(!email.endsWith("com")) return false;
         else if(!email.contains("@")) return false;
+        else{
+            x = email.lastIndexOf("@");
+            y = email.lastIndexOf(".");
+//            Log.d("DEBUG", "index @: " + x + "index .: " + y);
+            if(y - x == 1) return false;
+        }
         //email yg sebelahnya @ sama . blom
 //        else if(!email.)
         return true;
@@ -60,7 +68,12 @@ public class MainActivity extends AppCompatActivity {
                         }
                     }, 5000);
                 } else if(!validateEmail(etEmail.getText().toString())) {
-                    tvError.setText("Must be a validate email address");
+                    if(y - x == 1){
+                        tvError.setText("@ and . should not adjacent each other");
+                    }
+                    else{
+                        tvError.setText("Must be a validate email address");
+                    }
                     tvError.setBackgroundResource(R.color.error_bg);
                     tvError.postDelayed(new Runnable() {
                         @Override

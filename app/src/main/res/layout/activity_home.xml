@@ -59,7 +59,7 @@
 
             <Button
                 android:id="@+id/btn_prev_image"
-                android:layout_width="wrap_content"
+                android:layout_width="42dp"
                 android:layout_height="wrap_content"
                 android:text="p"
                 android:textColor="@color/black"
@@ -89,7 +89,7 @@
 
             <Button
                 android:id="@+id/btn_next_image"
-                android:layout_width="wrap_content"
+                android:layout_width="42dp"
                 android:layout_height="wrap_content"
                 android:text="n"
                 android:textColor="@color/black"
@@ -107,7 +107,7 @@
         app:headerLayout="@layout/sidebar"
         app:menu="@menu/menu"
         app:itemTextAppearance="@style/NewFontStyle"
-        app:itemTextColor="@color/white"
+        app:itemTextColor="@color/nav_view_item"
         android:gravity="center"
         app:theme="@style/NavigationDrawerStyle"
         android:background="@color/sidebar_bg"

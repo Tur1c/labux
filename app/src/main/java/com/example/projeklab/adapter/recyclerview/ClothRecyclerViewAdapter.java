@@ -39,7 +39,7 @@ public class ClothRecyclerViewAdapter extends RecyclerView.Adapter<ClothRecycler
         holder.ClothImage.setImageResource(cloth.getImage());
         holder.ClothName.setText(cloth.getName());
         holder.ClothDesc.setText(cloth.getDesc());
-        holder.ClothPrice.setText("Rp. " + cloth.getPrice());
+        holder.ClothPrice.setText("Rp " + cloth.getPrice());
     }
 
     @Override

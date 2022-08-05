@@ -66,16 +66,16 @@ public class FragmentAlbum extends Fragment {
         }
 
         VAlbum = new Vector<>();
-        VAlbum.add(new Album(R.drawable.album_1,"TRI.BE","3RD Single Album Leviosa",
-                490263));
+        VAlbum.add(new Album(R.drawable.album_1,"TRI.BE","3RD Single Album Leviosa\n",
+                "490,263"));
         VAlbum.add(new Album(R.drawable.album_2,"CIX","5TH Ep Album OK Episode 1\n" +
-                "OK Not Jewel Case Ver.", 445626));
+                "OK Not Jewel Case Ver.", "445,626"));
         VAlbum.add(new Album(R.drawable.album_3,"Twice","DICON DFESTA Special Photobook\n" +
-                "3D Lenticular Cover", 1308608));
-        VAlbum.add(new Album(R.drawable.album_4,"Aespa","GLASS MAGAZINE (UK) 2021 SUMMER\n" +
-                "ISSUE AESPA COVER", 534900));
+                "3D Lenticular Cover", "1,308,608"));
+        VAlbum.add(new Album(R.drawable.album_4,"Aespa","Glass Magazine(UK) 2021 Summer\n" +
+                "ISSUE AESPA COVER", "534,900"));
         VAlbum.add(new Album(R.drawable.album_5,"NCT127","DICON DFESTA Special Photobook\n" +
-                "3D Lenticular Cover", 1308608));
+                "3D Lenticular Cover", "1,308,608"));
     }
 
     @Override

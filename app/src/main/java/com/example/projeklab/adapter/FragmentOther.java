@@ -67,20 +67,20 @@ public class FragmentOther extends Fragment {
 
         VOther = new Vector<>();
         VOther.add(new Other(R.drawable.other_1,"Stray Kids",
-                "Official Light Stick (NACHIMBONG)",
-                1249092));
+                "Official Light Stick (NACHIMBONG)\n",
+                "1,249,092"));
         VOther.add(new Other(R.drawable.other_2,"BTS Pop Up",
-                "BTS CHARACTER MINI FIGURE",
-                371231));
+                "BTS CHARACTER MINI FIGURE\n",
+                "371,231"));
         VOther.add(new Other(R.drawable.other_3,"BT21",
                 "COOKY STANDING DOLL (MEDIUM)",
-                891996));
+                "891,996"));
         VOther.add(new Other(R.drawable.other_4,"AESPA",
-                "Official Light Stick",
-                1025907));
+                "Official Light Stick\n",
+                "1,025,907"));
         VOther.add(new Other(R.drawable.other_5,"BTS",
                 "HOLIDAY COLLECTION LITTLE WISHES",
-                475384));
+                "475,384"));
     }
 
     @Override

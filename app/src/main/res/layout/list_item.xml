@@ -1,39 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    >
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardBackgroundColor="@color/bg">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="300dp"
         android:orientation="vertical"
-        android:gravity="center">
+        android:background="@color/card_bg"
+        android:paddingHorizontal="10dp"
+        android:layout_margin="8dp">
 
         <ImageView
             android:id="@+id/iv_ItemImage"
-            android:layout_width="match_parent"
-            android:layout_height="197dp"
+            android:layout_width="wrap_content"
+            android:layout_height="170dp"
+            android:paddingTop="10dp"
             android:src="@drawable/album_1" />
 
         <TextView
+            android:id="@+id/tv_ItemName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:text="Album Name"
-            android:id="@+id/tv_ItemName" />
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+             />
 
         <TextView
+            android:id="@+id/tv_ItemDesc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
             android:text="Album Desc"
-            android:id="@+id/tv_ItemDesc"/>
+            android:textSize="10sp"
+            />
 
         <TextView
+            android:id="@+id/tv_ItemPrice"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Album Price"
-            android:id="@+id/tv_ItemPrice" />
+            android:layout_marginTop="20dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:text="Album Price" />
 
     </LinearLayout>
     

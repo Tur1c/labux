@@ -4,9 +4,9 @@ public class Other {
     private int image;
     private String name;
     private String desc;
-    private int price;
+    private String price;
 
-    public Other(int image, String name, String desc, int price) {
+    public Other(int image, String name, String desc, String price) {
         this.image = image;
         this.name = name;
         this.desc = desc;
@@ -37,11 +37,11 @@ public class Other {
         this.desc = desc;
     }
 
-    public int getPrice() {
+    public String getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(String price) {
         this.price = price;
     }
 }

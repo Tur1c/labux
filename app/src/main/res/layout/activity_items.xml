@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/bg"
     android:id="@+id/drawerLayout"
     tools:context=".Items">
 
@@ -33,7 +34,8 @@
         app:headerLayout="@layout/sidebar"
         app:menu="@menu/menu"
         app:itemTextAppearance="@style/NewFontStyle"
-        app:itemTextColor="@color/white"
+        app:itemTextColor="@color/nav_view_item"
+
         android:gravity="center"
         app:theme="@style/NavigationDrawerStyle"
         android:background="@color/sidebar_bg"

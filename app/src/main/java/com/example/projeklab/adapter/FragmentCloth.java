@@ -68,21 +68,21 @@ public class FragmentCloth extends Fragment {
 
         VCloth = new Vector<>();
         VCloth.add(new Cloth(R.drawable.cloth_1,"PPGIRL",
-                "Sleeves A-Line-Madness",
-                1096537));
+                "Sleeves A-Line-Madness\n",
+                "1,096,537"));
         VCloth.add(new Cloth(R.drawable.cloth_2,"Popplebonk",
-                "Lace Trim A-Line Mini Dress",
-                412444));
+                "Lace Trim A-Line Mini Dress\n",
+                "412,444"));
         VCloth.add(new Cloth(R.drawable.cloth_3,"Cafamo",
                 "High-Waist Drawstring Plain \n" +
                         "Straight-Leg Pants",
-                275625));
+                "275,625"));
         VCloth.add(new Cloth(R.drawable.cloth_4,"Giuliana",
-                "Rabbit Print Hoodie",
-                574771));
+                "Rabbit Print Hoodie\n",
+                "574,771"));
         VCloth.add(new Cloth(R.drawable.cloth_5,"Oceanid",
-                "Set: Swim Top + Bottom",
-                356126));
+                "Set: Swim Top + Bottom\n",
+                "356,126"));
     }
 
     @Override
