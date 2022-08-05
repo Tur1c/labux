@@ -3,12 +3,18 @@ package com.example.projeklab.adapter;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.projeklab.R;
+import com.example.projeklab.adapter.recyclerview.AlbumRecyclerViewAdapter;
+import com.example.projeklab.model.Album;
+
+import java.util.Vector;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -25,6 +31,9 @@ public class FragmentAlbum extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    View v;
+    private RecyclerView recyclerView;
+    private Vector<Album> VAlbum;
 
     public FragmentAlbum() {
         // Required empty public constructor
@@ -55,12 +64,30 @@ public class FragmentAlbum extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+        VAlbum = new Vector<>();
+        VAlbum.add(new Album(R.drawable.album_1,"TRI.BE","3RD Single Album Leviosa",
+                490263));
+        VAlbum.add(new Album(R.drawable.album_2,"CIX","5TH Ep Album OK Episode 1\n" +
+                "OK Not Jewel Case Ver.", 445626));
+        VAlbum.add(new Album(R.drawable.album_3,"Twice","DICON DFESTA Special Photobook\n" +
+                "3D Lenticular Cover", 1308608));
+        VAlbum.add(new Album(R.drawable.album_4,"Aespa","GLASS MAGAZINE (UK) 2021 SUMMER\n" +
+                "ISSUE AESPA COVER", 534900));
+        VAlbum.add(new Album(R.drawable.album_5,"NCT127","DICON DFESTA Special Photobook\n" +
+                "3D Lenticular Cover", 1308608));
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_album, container, false);
+        v = inflater.inflate(R.layout.fragment_album, container, false);
+        recyclerView = v.findViewById(R.id.rv_album);
+        AlbumRecyclerViewAdapter albumRecyclerViewAdapter = new AlbumRecyclerViewAdapter(getContext()
+        , VAlbum);
+        recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 2));
+        recyclerView.setAdapter(albumRecyclerViewAdapter);
+        return v;
     }
 }
