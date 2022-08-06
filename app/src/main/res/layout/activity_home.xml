@@ -59,7 +59,7 @@
 
             <Button
                 android:id="@+id/btn_prev_image"
-                android:layout_width="42dp"
+                android:layout_width="40dp"
                 android:layout_height="wrap_content"
                 android:text="p"
                 android:textColor="@color/black"
@@ -89,7 +89,7 @@
 
             <Button
                 android:id="@+id/btn_next_image"
-                android:layout_width="42dp"
+                android:layout_width="40dp"
                 android:layout_height="wrap_content"
                 android:text="n"
                 android:textColor="@color/black"
