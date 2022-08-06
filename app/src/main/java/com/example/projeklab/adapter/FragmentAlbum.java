@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -97,6 +98,11 @@ public class FragmentAlbum extends Fragment implements RecyclerViewInterface {
     @Override
     public void onItemClick(int position) {
         Intent intent = new Intent(getActivity(), DetailItem.class);
+        Album album = VAlbum.get(position);
+        intent.putExtra("itemName",album.getName());
+        intent.putExtra("itemDesc",album.getDesc());
+        intent.putExtra("itemPrice",album.getPrice());
+        intent.putExtra("itemImage",album.getImage());
         startActivity(intent);
     }
 }

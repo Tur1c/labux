@@ -57,13 +57,13 @@
             android:orientation="horizontal"
             android:background="@color/sidebar_bg">
 
-            <Button
+            <ImageButton
                 android:id="@+id/btn_prev_image"
-                android:layout_width="40dp"
-                android:layout_height="wrap_content"
-                android:text="p"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:src="@drawable/prev"
                 android:textColor="@color/black"
-                android:backgroundTint="@drawable/button_radius"
+                android:background="@drawable/button_radius"
                 android:layout_margin="10dp"/>
 
             <ImageView
@@ -87,18 +87,19 @@
                 android:background="@drawable/active_dot"
                 android:layout_margin="5dp"/>
 
-            <Button
+            <ImageButton
                 android:id="@+id/btn_next_image"
-                android:layout_width="40dp"
-                android:layout_height="wrap_content"
-                android:text="n"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:src="@drawable/next"
                 android:textColor="@color/black"
-                android:backgroundTint="@drawable/button_radius"
+                android:background="@drawable/button_radius"
                 android:layout_margin="10dp"/>
 
         </LinearLayout>
 
     </LinearLayout>
+
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navView"

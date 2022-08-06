@@ -105,6 +105,11 @@ public class FragmentCloth extends Fragment implements RecyclerViewInterface {
     @Override
     public void onItemClick(int position) {
         Intent intent = new Intent(getActivity(), DetailItem.class);
+        Cloth cloth = VCloth.get(position);
+        intent.putExtra("itemName",cloth.getName());
+        intent.putExtra("itemDesc",cloth.getDesc());
+        intent.putExtra("itemPrice",cloth.getPrice());
+        intent.putExtra("itemImage",cloth.getImage());
         startActivity(intent);
     }
 }

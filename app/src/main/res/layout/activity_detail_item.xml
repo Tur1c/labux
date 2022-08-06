@@ -1,14 +1,141 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.cardview.widget.CardView
+    android:id="@+id/detail_cardView"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DetailItem">
+    tools:context=".DetailItem"
+    app:cardBackgroundColor="@color/bg"
+    android:animateLayoutChanges="true"
+    >
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Ini detail" />
+        android:orientation="horizontal"
+        android:layout_marginTop="25dp"
+        android:layout_marginStart="10dp"
+        >
+        <ImageButton
+            android:id="@+id/detail_back"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/white_prev"
+            android:background="@android:color/transparent"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Item Detail"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:textStyle="bold"/>
+    </LinearLayout>
 
-</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/card_bg"
+        android:orientation="vertical"
+        android:paddingHorizontal="50dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginBottom="50dp"
+        android:layout_marginHorizontal="20dp">
+
+
+        <ImageView
+            android:id="@+id/detail_itemImage"
+            android:layout_width="wrap_content"
+            android:layout_height="313dp"
+
+            android:src="@drawable/album_1" />
+
+        <TextView
+            android:id="@+id/detail_itemName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Item Name"
+
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="24sp"/>
+
+        <TextView
+            android:id="@+id/detail_itemDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="Item Description"
+
+            android:layout_marginTop="5dp" />
+
+        <TextView
+            android:id="@+id/detail_itemPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Item Price"
+            android:layout_marginTop="5dp"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/textQuantity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:gravity="center"
+                android:text="Quantity"
+                android:textStyle="bold"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/detail_quantity"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textQuantity"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/borderbackground"
+                android:gravity="center"
+                android:layout_centerHorizontal="true"
+                android:inputType="numberSigned"
+                android:hint="0" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/detail_error"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Error Message"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:textColor="@color/red"
+            android:background="@android:color/transparent"
+            android:visibility="gone"
+
+            />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/detail_buyBtn"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/button_test"
+            android:backgroundTintMode="@color/button_bg"
+            android:text="Buy"
+            android:textColor="@color/white"
+            android:layout_marginTop="15dp"
+            />
+
+
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>

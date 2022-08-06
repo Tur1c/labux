@@ -8,6 +8,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.widget.TextView;
 
@@ -24,6 +25,7 @@ public class AboutUs extends AppCompatActivity implements NavigationView.OnNavig
     void init() {
         drawerLayout = findViewById(R.id.drawerLayout);
         navView = findViewById(R.id.navView);
+        navView.setCheckedItem(R.id.nav_about_us);
         toolbar = findViewById(R.id.toolbar);
         toolBarTv = findViewById(R.id.toolbar_text);
         toolBarTv.setText("About Us");
@@ -49,6 +51,7 @@ public class AboutUs extends AppCompatActivity implements NavigationView.OnNavig
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.nav_home:
+                item.setChecked(true);
                 Intent intentHome = new Intent(this, Home.class);
                 startActivity(intentHome);
                 finish();

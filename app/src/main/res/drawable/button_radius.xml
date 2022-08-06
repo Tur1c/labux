@@ -7,7 +7,7 @@
                 android:color="@color/image_carousel_btn"/>
 
             <corners
-                android:radius="100dp"/>
+                android:radius="10dp"/>
 
             <solid
                 android:color="@color/image_carousel_btn"/>

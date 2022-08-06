@@ -102,6 +102,11 @@ public class FragmentOther extends Fragment implements RecyclerViewInterface {
     @Override
     public void onItemClick(int position) {
         Intent intent = new Intent(getActivity(), DetailItem.class);
+        Other other = VOther.get(position);
+        intent.putExtra("itemName",other.getName());
+        intent.putExtra("itemDesc",other.getDesc());
+        intent.putExtra("itemPrice",other.getPrice());
+        intent.putExtra("itemImage",other.getImage());
         startActivity(intent);
     }
 }

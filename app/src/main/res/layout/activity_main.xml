@@ -49,9 +49,10 @@
         android:layout_marginTop="20dp"
         android:layout_marginRight="30dp"
         android:layout_marginLeft="30dp"
-        android:textColor="@color/red"
+        android:textColor="@color/light_red"
         android:textSize="20dp"
         android:gravity="center"
+        android:background="@android:color/transparent"
         android:fontFamily="@font/montserrat_medium_500"/>
 
     <Button

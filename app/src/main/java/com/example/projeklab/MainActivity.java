@@ -39,8 +39,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     boolean validatePassword(String password) {
-        if(!password.matches("^[a-zA-Z0-9]*$")) return false;
-        return true;
+        if(password.matches(".*[0-9].*") &&
+                password.matches(".*[A-z].*")) return true;
+        return false;
     }
 
     void submit() {
@@ -49,22 +50,22 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if(etEmail.getText().length() == 0) {
                     tvError.setText("Email field must not blank");
-                    tvError.setBackgroundResource(R.color.error_bg);
+//                    tvError.setBackgroundResource(R.color.error_bg);
                     tvError.postDelayed(new Runnable() {
                         @Override
                         public void run() {
                             tvError.setText("");
-                            tvError.setBackgroundResource(R.color.bg);
+//                            tvError.setBackgroundResource(R.color.bg);
                         }
                     }, 5000);
                 } else if(etPassword.getText().length() == 0) {
                     tvError.setText("Password field must not blank");
-                    tvError.setBackgroundResource(R.color.error_bg);
+//                    tvError.setBackgroundResource(R.color.error_bg);
                     tvError.postDelayed(new Runnable() {
                         @Override
                         public void run() {
                             tvError.setText("");
-                            tvError.setBackgroundResource(R.color.bg);
+//                            tvError.setBackgroundResource(R.color.bg);
                         }
                     }, 5000);
                 } else if(!validateEmail(etEmail.getText().toString())) {
@@ -74,22 +75,22 @@ public class MainActivity extends AppCompatActivity {
                     else{
                         tvError.setText("Must be a validate email address");
                     }
-                    tvError.setBackgroundResource(R.color.error_bg);
+//                    tvError.setBackgroundResource(R.color.error_bg);
                     tvError.postDelayed(new Runnable() {
                         @Override
                         public void run() {
                             tvError.setText("");
-                            tvError.setBackgroundResource(R.color.bg);
+//                            tvError.setBackgroundResource(R.color.bg);
                         }
                     }, 5000);
                 } else if(!validatePassword(etPassword.getText().toString())) {
                     tvError.setText("Password must be alphanumeric");
-                    tvError.setBackgroundResource(R.color.error_bg);
+//                    tvError.setBackgroundResource(R.color.error_bg);
                     tvError.postDelayed(new Runnable() {
                         @Override
                         public void run() {
                             tvError.setText("");
-                            tvError.setBackgroundResource(R.color.bg);
+//                            tvError.setBackgroundResource(R.color.bg);
                         }
                     }, 5000);
                 } else {

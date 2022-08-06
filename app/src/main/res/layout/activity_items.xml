@@ -35,7 +35,6 @@
         app:menu="@menu/menu"
         app:itemTextAppearance="@style/NewFontStyle"
         app:itemTextColor="@color/nav_view_item"
-
         android:gravity="center"
         app:theme="@style/NavigationDrawerStyle"
         android:background="@color/sidebar_bg"

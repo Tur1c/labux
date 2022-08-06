@@ -10,10 +10,12 @@ import androidx.viewpager.widget.ViewPager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -43,7 +45,7 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
     private int dotsCount;
     private ImageView[] dots;
     ImageView iv_btn_1, iv_btn_2, iv_btn_3;
-    Button btnNext, btnPrev;
+    ImageButton btnNext, btnPrev;
     int currentPageCounter = 0;
 
     void init() {
@@ -51,6 +53,8 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
         tvUsername = findViewById(R.id.tv_username);
         drawerLayout = findViewById(R.id.drawerLayout);
         navView = findViewById(R.id.navView);
+        Log.d("DEBUG", "init: " + navView.getCheckedItem());
+        navView.setCheckedItem(R.id.nav_home);
         toolbar = findViewById(R.id.toolbar);
 
         iv_btn_1 = findViewById(R.id.btn_img_1);
@@ -59,10 +63,7 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
 
         btnNext = findViewById(R.id.btn_next_image);
         btnPrev = findViewById(R.id.btn_prev_image);
-        btnNext.setText(">");
-        btnNext.setTextSize(24);
-        btnPrev.setText("<");
-        btnPrev.setTextSize(24);
+
 
         sliderDots = findViewById(R.id.slider_dots);
         dotsCount = images.length;
