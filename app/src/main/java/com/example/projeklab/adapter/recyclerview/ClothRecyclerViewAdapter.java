@@ -18,12 +18,14 @@ import com.example.projeklab.model.Cloth;
 import java.util.Vector;
 
 public class ClothRecyclerViewAdapter extends RecyclerView.Adapter<ClothRecyclerViewAdapter.viewHolder> {
+    private final RecyclerViewInterface recyclerViewInterface;
     private Context context;
     private Vector<Cloth> VCloth;
 
-    public ClothRecyclerViewAdapter(Context context, Vector<Cloth> VCloth){
+    public ClothRecyclerViewAdapter(Context context, Vector<Cloth> VCloth, RecyclerViewInterface recyclerViewInterface){
         this.context = context;
         this.VCloth = VCloth;
+        this.recyclerViewInterface = recyclerViewInterface;
     }
 
     @NonNull
@@ -58,6 +60,18 @@ public class ClothRecyclerViewAdapter extends RecyclerView.Adapter<ClothRecycler
             ClothName = itemView.findViewById(R.id.tv_ItemName);
             ClothDesc = itemView.findViewById(R.id.tv_ItemDesc);
             ClothPrice = itemView.findViewById(R.id.tv_ItemPrice);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (recyclerViewInterface != null) {
+                        int position = getAdapterPosition();
+                        if(position != RecyclerView.NO_POSITION) {
+                            recyclerViewInterface.onItemClick(position);
+                        }
+                    }
+                }
+            });
         }
     }
 }

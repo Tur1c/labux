@@ -16,13 +16,14 @@ import com.example.projeklab.model.Other;
 import java.util.Vector;
 
 public class OtherRecyclerViewAdapter extends RecyclerView.Adapter<OtherRecyclerViewAdapter.viewHolder> {
-
+    private final RecyclerViewInterface recyclerViewInterface;
     private Context context;
     private Vector<Other> VOther;
 
-    public OtherRecyclerViewAdapter(Context context, Vector<Other> VOther){
+    public OtherRecyclerViewAdapter(Context context, Vector<Other> VOther, RecyclerViewInterface recyclerViewInterface){
         this.context = context;
         this.VOther = VOther;
+        this.recyclerViewInterface = recyclerViewInterface;
     }
 
     @NonNull
@@ -57,6 +58,18 @@ public class OtherRecyclerViewAdapter extends RecyclerView.Adapter<OtherRecycler
             OtherName = itemView.findViewById(R.id.tv_ItemName);
             OtherDesc = itemView.findViewById(R.id.tv_ItemDesc);
             OtherPrice = itemView.findViewById(R.id.tv_ItemPrice);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (recyclerViewInterface != null) {
+                        int position = getAdapterPosition();
+                        if(position != RecyclerView.NO_POSITION) {
+                            recyclerViewInterface.onItemClick(position);
+                        }
+                    }
+                }
+            });
         }
     }
 }

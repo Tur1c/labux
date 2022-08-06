@@ -1,5 +1,6 @@
 package com.example.projeklab.adapter;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -10,9 +11,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.projeklab.DetailItem;
+import com.example.projeklab.Items;
 import com.example.projeklab.R;
 
 import com.example.projeklab.adapter.recyclerview.ClothRecyclerViewAdapter;
+import com.example.projeklab.adapter.recyclerview.RecyclerViewInterface;
 import com.example.projeklab.model.Cloth;
 
 import java.util.Vector;
@@ -22,7 +26,7 @@ import java.util.Vector;
  * Use the {@link FragmentCloth#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class FragmentCloth extends Fragment {
+public class FragmentCloth extends Fragment implements RecyclerViewInterface {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -92,9 +96,15 @@ public class FragmentCloth extends Fragment {
         v = inflater.inflate(R.layout.fragment_cloth, container, false);
         recyclerView = v.findViewById(R.id.rv_cloth);
         ClothRecyclerViewAdapter clothRecyclerViewAdapter = new ClothRecyclerViewAdapter(
-                getContext(), VCloth);
+                getContext(), VCloth, this);
         recyclerView.setLayoutManager(new GridLayoutManager(getActivity(),2));
         recyclerView.setAdapter(clothRecyclerViewAdapter);
         return v;
+    }
+
+    @Override
+    public void onItemClick(int position) {
+        Intent intent = new Intent(getActivity(), DetailItem.class);
+        startActivity(intent);
     }
 }

@@ -1,5 +1,6 @@
 package com.example.projeklab.adapter;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -10,8 +11,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.projeklab.DetailItem;
 import com.example.projeklab.R;
 import com.example.projeklab.adapter.recyclerview.OtherRecyclerViewAdapter;
+import com.example.projeklab.adapter.recyclerview.RecyclerViewInterface;
 import com.example.projeklab.model.Other;
 
 import java.util.Vector;
@@ -21,7 +24,7 @@ import java.util.Vector;
  * Use the {@link FragmentOther#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class FragmentOther extends Fragment {
+public class FragmentOther extends Fragment implements RecyclerViewInterface {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -90,10 +93,15 @@ public class FragmentOther extends Fragment {
         v = inflater.inflate(R.layout.fragment_other,container,false);
         recyclerView = v.findViewById(R.id.rv_other);
         OtherRecyclerViewAdapter otherRecyclerViewAdapter = new OtherRecyclerViewAdapter(
-            getContext(), VOther
-        );
+            getContext(), VOther, this);
         recyclerView.setLayoutManager(new GridLayoutManager(getActivity(),2));
         recyclerView.setAdapter(otherRecyclerViewAdapter);
         return v;
+    }
+
+    @Override
+    public void onItemClick(int position) {
+        Intent intent = new Intent(getActivity(), DetailItem.class);
+        startActivity(intent);
     }
 }

@@ -16,13 +16,14 @@ import com.example.projeklab.model.Album;
 import java.util.Vector;
 
 public class AlbumRecyclerViewAdapter extends RecyclerView.Adapter<AlbumRecyclerViewAdapter.viewHolder> {
-
+    private final RecyclerViewInterface recyclerViewInterface;
     private Context context;
     Vector<Album> VAlbum;
 
-    public AlbumRecyclerViewAdapter(Context context, Vector<Album> VAlbum){
+    public AlbumRecyclerViewAdapter(Context context, Vector<Album> VAlbum, RecyclerViewInterface recyclerViewInterface){
         this.context = context;
         this.VAlbum = VAlbum;
+        this.recyclerViewInterface = recyclerViewInterface;
     }
 
     @NonNull
@@ -57,6 +58,18 @@ public class AlbumRecyclerViewAdapter extends RecyclerView.Adapter<AlbumRecycler
             AlbumName = itemView.findViewById(R.id.tv_ItemName);
             AlbumDesc = itemView.findViewById(R.id.tv_ItemDesc);
             AlbumPrice = itemView.findViewById(R.id.tv_ItemPrice);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (recyclerViewInterface != null) {
+                        int position = getAdapterPosition();
+                        if(position != RecyclerView.NO_POSITION) {
+                            recyclerViewInterface.onItemClick(position);
+                        }
+                    }
+                }
+            });
         }
     }
 }
