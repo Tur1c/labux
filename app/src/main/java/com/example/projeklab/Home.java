@@ -162,7 +162,7 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
             public void run() {
                 handler.post(update);
             }
-        }, 5000, 5000);
+        }, 1000, 5000);
     }
 
     @Override

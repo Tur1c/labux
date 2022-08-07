@@ -33,8 +33,6 @@ public class MainActivity extends AppCompatActivity {
 //            Log.d("DEBUG", "index @: " + x + "index .: " + y);
             if(y - x == 1) return false;
         }
-        //email yg sebelahnya @ sama . blom
-//        else if(!email.)
         return true;
     }
 
@@ -50,21 +48,31 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if(etEmail.getText().length() == 0) {
                     tvError.setText("Email field must not blank");
+                    tvError.setAlpha(1);
+                    tvError.setVisibility(View.VISIBLE);
+                    tvError.animate().alpha(0.0f).setDuration(5000);
 //                    tvError.setBackgroundResource(R.color.error_bg);
                     tvError.postDelayed(new Runnable() {
                         @Override
                         public void run() {
                             tvError.setText("");
+                            tvError.setVisibility(View.INVISIBLE);
+                            tvError.setVisibility(View.GONE);
 //                            tvError.setBackgroundResource(R.color.bg);
                         }
                     }, 5000);
                 } else if(etPassword.getText().length() == 0) {
                     tvError.setText("Password field must not blank");
+                    tvError.setAlpha(1);
+                    tvError.setVisibility(View.VISIBLE);
+                    tvError.animate().alpha(0.0f).setDuration(5000);
 //                    tvError.setBackgroundResource(R.color.error_bg);
                     tvError.postDelayed(new Runnable() {
                         @Override
                         public void run() {
                             tvError.setText("");
+                            tvError.setVisibility(View.INVISIBLE);
+                            tvError.setVisibility(View.GONE);
 //                            tvError.setBackgroundResource(R.color.bg);
                         }
                     }, 5000);
@@ -75,21 +83,31 @@ public class MainActivity extends AppCompatActivity {
                     else{
                         tvError.setText("Must be a validate email address");
                     }
+                    tvError.setAlpha(1);
+                    tvError.setVisibility(View.VISIBLE);
+                    tvError.animate().alpha(0.0f).setDuration(5000);
 //                    tvError.setBackgroundResource(R.color.error_bg);
                     tvError.postDelayed(new Runnable() {
                         @Override
                         public void run() {
                             tvError.setText("");
+                            tvError.setVisibility(View.INVISIBLE);
+                            tvError.setVisibility(View.GONE);
 //                            tvError.setBackgroundResource(R.color.bg);
                         }
                     }, 5000);
                 } else if(!validatePassword(etPassword.getText().toString())) {
                     tvError.setText("Password must be alphanumeric");
+                    tvError.setAlpha(1);
+                    tvError.setVisibility(View.VISIBLE);
+                    tvError.animate().alpha(0.0f).setDuration(5000);
 //                    tvError.setBackgroundResource(R.color.error_bg);
                     tvError.postDelayed(new Runnable() {
                         @Override
                         public void run() {
                             tvError.setText("");
+                            tvError.setVisibility(View.INVISIBLE);
+                            tvError.setVisibility(View.GONE);
 //                            tvError.setBackgroundResource(R.color.bg);
                         }
                     }, 5000);
