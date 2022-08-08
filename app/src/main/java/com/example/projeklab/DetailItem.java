@@ -3,6 +3,7 @@ package com.example.projeklab;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -21,12 +22,14 @@ public class DetailItem extends AppCompatActivity {
     Bundle extras;
     String itemName, itemDesc,itemPrice;
     int itemImage;
-    TextView name,desc,price, error;
+    TextView name,desc,price;
+//    TextView error;
     EditText quantity;
     ImageView image;
     ImageButton back;
     Button buyBtn;
     ViewGroup transition;
+    Dialog errorDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,21 +52,38 @@ public class DetailItem extends AppCompatActivity {
             public void onClick(View view) {
                 if(quantity.getText().toString().isEmpty() ||
                 Integer.parseInt(quantity.getText().toString()) == 0){
-                    TransitionManager.beginDelayedTransition(transition);
-                    error.setText("Quantity should not be 0");
-                    error.setAlpha(1);
-                    error.setVisibility(View.VISIBLE);
-                    error.animate().alpha(0.0f).setDuration(2500);
-                    error.postDelayed(new Runnable() {
+                    errorDialog = new Dialog(DetailItem.this);
+
+                    errorDialog.setContentView(R.layout.dialog_validate);
+                    TextView errorMessage = errorDialog.findViewById(R.id.tv_error_message);
+                    Button DialogOK = errorDialog.findViewById(R.id.dialog_ok_button);
+
+                    errorMessage.setText("Quantity should not be 0");
+                    errorDialog.show();
+
+                    DialogOK.setOnClickListener(new View.OnClickListener() {
                         @Override
-                        public void run() {
-
-                            error.setText("");
-
-                            error.setVisibility(View.INVISIBLE);
-                            error.setVisibility(View.GONE);
+                        public void onClick(View view) {
+                            DialogOK.setBackgroundResource(R.color.button_bg_hover);
+                            errorDialog.hide();
                         }
-                    }, 3000);
+                    });
+
+//                    TransitionManager.beginDelayedTransition(transition);
+//                    error.setText("Quantity should not be 0");
+//                    error.setAlpha(1);
+//                    error.setVisibility(View.VISIBLE);
+//                    error.animate().alpha(0.0f).setDuration(2500);
+//                    error.postDelayed(new Runnable() {
+//                        @Override
+//                        public void run() {
+//
+//                            error.setText("");
+//
+//                            error.setVisibility(View.INVISIBLE);
+//                            error.setVisibility(View.GONE);
+//                        }
+//                    }, 3000);
 
                 }
                 else{
@@ -85,7 +105,7 @@ public class DetailItem extends AppCompatActivity {
                 "itemPrice: " + itemPrice + "\n" +
                 "itemImage" + itemImage);
         buyBtn = findViewById(R.id.detail_buyBtn);
-        error = findViewById(R.id.detail_error);
+//        error = findViewById(R.id.detail_error);
         quantity = findViewById(R.id.detail_quantity);
         transition = findViewById(R.id.detail_cardView);
     }
