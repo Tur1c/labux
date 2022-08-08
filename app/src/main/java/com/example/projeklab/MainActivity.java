@@ -15,7 +15,8 @@ public class MainActivity extends AppCompatActivity {
     EditText etEmail, etPassword;
     TextView tvError;
     Button btnSubmit;
-    int x,y;
+    int x;
+    Character y;
 
     void init() {
         etEmail = findViewById(R.id.et_email);
@@ -29,9 +30,9 @@ public class MainActivity extends AppCompatActivity {
         else if(!email.contains("@")) return false;
         else{
             x = email.lastIndexOf("@");
-            y = email.lastIndexOf(".");
-//            Log.d("DEBUG", "index @: " + x + "index .: " + y);
-            if(y - x == 1) return false;
+            y = email.charAt(x+1);
+
+            if(y.toString().contains(".")) return false;
         }
         return true;
     }
@@ -77,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
                         }
                     }, 5000);
                 } else if(!validateEmail(etEmail.getText().toString())) {
-                    if(y - x == 1){
+                    if(y.toString().contains(".")){
                         tvError.setText("@ and . should not adjacent each other");
                     }
                     else{
