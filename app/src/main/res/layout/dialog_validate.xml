@@ -20,6 +20,7 @@
             android:layout_height="wrap_content"
             android:text="Error"
             android:textAlignment="textStart"
+            android:fontFamily="@font/montserrat_bold_700"
             android:textColor="@color/text_error"
             android:textStyle="bold"/>
 
@@ -28,6 +29,7 @@
             android:layout_height="wrap_content"
             android:text="Error Message"
             android:textColor="@color/black"
+            android:fontFamily="@font/montserrat_medium_500"
             android:layout_marginTop="5dp"
             android:id="@+id/tv_error_message"/>
 
@@ -37,6 +39,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="190dp"
             android:text="OK"
+            android:fontFamily="@font/montserrat_bold_700"
             style="?android:attr/borderlessButtonStyle"
             android:backgroundTint="@color/card_bg"
             android:textColor="@color/text_error"

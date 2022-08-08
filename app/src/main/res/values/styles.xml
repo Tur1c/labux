@@ -9,5 +9,9 @@
 
     </style>
 
+    <style name="tab_text" parent="@android:style/TextAppearance.Widget.TabWidget">
+        <item name="android:fontFamily">@font/montserrat_semibold_600</item>
+    </style>
+
 
 </resources>

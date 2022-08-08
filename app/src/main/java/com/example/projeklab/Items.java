@@ -10,6 +10,7 @@ import androidx.viewpager2.widget.ViewPager2;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.MenuItem;
 import android.widget.TextView;
 
@@ -34,7 +35,8 @@ public class Items extends AppCompatActivity implements NavigationView.OnNavigat
         navView.setCheckedItem(R.id.nav_items);
         toolbar = findViewById(R.id.toolbar);
         toolBarTv = findViewById(R.id.toolbar_text);
-        toolBarTv.setText("Mechandise");
+        toolBarTv.setText("Merchandise");
+        toolBarTv.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 24);
 
         viewPager2 = findViewById(R.id.vp_merchandise);
         tabLayout = findViewById(R.id.tabLayout);
